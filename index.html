@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .card h2 {
+            margin-top: 0;
+        }
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        li::before {
+            content: "\2713\0020";
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Library Management System - ER Diagram Overview</h1>
+    <div class="container">
+
+        <div class="card">
+            <h2>Book</h2>
+            <ul>
+                <li>ISBN</li>
+                <li>Title</li>
+                <li>Authors</li>
+                <li>Category</li>
+                <li>Publisher</li>
+                <li>Language</li>
+                <li>Location</li>
+                <li>Status</li>
+                <li>numPages</li>
+                <li>Ratings</li>
+                <li>ratingsCount</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Patron</h2>
+            <ul>
+                <li>libraryCardID</li>
+                <li>PIN</li>
+                <li>Name</li>
+                <li>firstName</li>
+                <li>lastName</li>
+                <li>Phone</li>
+                <li>Email</li>
+                <li>cardExpire</li>
+                <li>bookHistory</li>
+                <li>Fees</li>
+                <li>Address (Street, City, State, Zipcode)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Staff</h2>
+            <ul>
+                <li>staffID</li>
+                <li>Name</li>
+                <li>firstName</li>
+                <li>lastName</li>
+                <li>Phone</li>
+                <li>Email</li>
+                <li>Address (Street, City, State, Zipcode)</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Library Branch</h2>
+            <ul>
+                <li>branchID</li>
+                <li>Location</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Relationships</h2>
+            <ul>
+                <li><strong>Reviews</strong> (Patron ↔ Book): Rating, Text</li>
+                <li><strong>Borrows</strong> (Patron ↔ Book): Renewals, holdStatus, dueDate</li>
+                <li><strong>Stocks</strong> (Library Branch ↔ Book)</li>
+                <li><strong>OpensCard</strong> (Staff ↔ Patron)</li>
+                <li><strong>Hires</strong> (Library Branch ↔ Staff)</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
